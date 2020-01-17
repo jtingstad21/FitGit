@@ -6,6 +6,7 @@ namespace final_app
 {
     public partial class App : Application
     {
+        
         public App()
         {
             InitializeComponent();
@@ -14,7 +15,7 @@ namespace final_app
         }
 
         protected override void OnStart()
-        {
+        {        
         }
 
         protected override void OnSleep()

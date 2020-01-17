@@ -11,3 +11,16 @@ C:\Users\joeyt\Documents\WJ2020\CS-371\Final\spotify_API\final_app\final_app\fin
 C:\Users\joeyt\Documents\WJ2020\CS-371\Final\spotify_API\final_app\final_app\final_app\obj\Debug\netstandard2.0\final_app.dll
 C:\Users\joeyt\Documents\WJ2020\CS-371\Final\spotify_API\final_app\final_app\final_app\obj\Debug\netstandard2.0\ref\final_app.dll
 C:\Users\joeyt\Documents\WJ2020\CS-371\Final\spotify_API\final_app\final_app\final_app\obj\Debug\netstandard2.0\final_app.pdb
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\bin\Debug\netstandard2.0\final_app.deps.json
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\bin\Debug\netstandard2.0\final_app.dll
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\bin\Debug\netstandard2.0\ref\final_app.dll
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\bin\Debug\netstandard2.0\final_app.pdb
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.csprojAssemblyReference.cache
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.AssemblyInfoInputs.cache
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.AssemblyInfo.cs
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.dll
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\obj\Debug\netstandard2.0\ref\final_app.dll
+C:\Users\Jonathan\Desktop\FinalCs371\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.pdb

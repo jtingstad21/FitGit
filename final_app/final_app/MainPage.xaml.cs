@@ -13,9 +13,11 @@ namespace final_app
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        
         public MainPage()
         {
             InitializeComponent();
+            //var Logo = new Image { Source = "C:/Users/Jonathan/Desktop/FinalCs371/FitGit/final_app/Logo.png" };
         }
         int count = 0;
         void Button_Clicked(object sender, System.EventArgs e)
@@ -23,5 +25,7 @@ namespace final_app
             count++;
             ((Button)sender).Text = $"You have clicked {count} times.";
         }
+
+        
     }
 }

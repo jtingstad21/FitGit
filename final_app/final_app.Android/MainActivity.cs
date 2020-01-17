@@ -1,11 +1,11 @@
 ﻿using System;
-
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using Android.Util;
 using Android.OS;
+using Android.Content;
 
 namespace final_app.Droid
 {
