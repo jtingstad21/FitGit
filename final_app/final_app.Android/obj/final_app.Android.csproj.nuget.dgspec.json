@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app.Android\\final_app.Android.csproj": {}
+    "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app.Android\\final_app.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app.Android\\final_app.Android.csproj": {
+    "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app.Android\\final_app.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app.Android\\final_app.Android.csproj",
+        "projectUniqueName": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app.Android\\final_app.Android.csproj",
         "projectName": "final_app.Android",
-        "projectPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app.Android\\final_app.Android.csproj",
+        "projectPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app.Android\\final_app.Android.csproj",
         "packagesPath": "C:\\Users\\joeyt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app.Android\\obj\\",
+        "outputPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app\\final_app.csproj": {
-                "projectPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app\\final_app.csproj"
+              "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\final_app.csproj": {
+                "projectPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\final_app.csproj"
               }
             }
           }
@@ -54,14 +54,14 @@
         }
       }
     },
-    "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app\\final_app.csproj": {
+    "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\final_app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app\\final_app.csproj",
+        "projectUniqueName": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\final_app.csproj",
         "projectName": "final_app",
-        "projectPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app\\final_app.csproj",
+        "projectPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\final_app.csproj",
         "packagesPath": "C:\\Users\\joeyt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit_app\\final_app\\final_app\\final_app\\obj\\",
+        "outputPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
