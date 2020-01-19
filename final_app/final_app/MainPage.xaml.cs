@@ -17,15 +17,19 @@ namespace final_app
         public MainPage()
         {
             InitializeComponent();
-            //var Logo = new Image { Source = "C:/Users/Jonathan/Desktop/FinalCs371/FitGit/final_app/Logo.png" };
         }
-        int count = 0;
-        void Button_Clicked(object sender, System.EventArgs e)
+        void login_clicked(object sender, System.EventArgs e)
         {
-            count++;
-            ((Button)sender).Text = $"You have clicked {count} times.";
+            Navigation.PushAsync(new LoginPage());
+        }
+        void sign_up_clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new SignUpPage());
         }
 
-        
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

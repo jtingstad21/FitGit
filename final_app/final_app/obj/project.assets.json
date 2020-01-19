@@ -566,23 +566,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jonathan\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\joeyt\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonathan\\Desktop\\FinalCs371\\FitGit\\final_app\\final_app\\final_app.csproj",
+      "projectUniqueName": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\final_app.csproj",
       "projectName": "final_app",
-      "projectPath": "C:\\Users\\Jonathan\\Desktop\\FinalCs371\\FitGit\\final_app\\final_app\\final_app.csproj",
-      "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonathan\\Desktop\\FinalCs371\\FitGit\\final_app\\final_app\\obj\\",
+      "projectPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\final_app.csproj",
+      "packagesPath": "C:\\Users\\joeyt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jonathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joeyt\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -632,7 +634,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

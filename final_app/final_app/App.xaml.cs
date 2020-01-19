@@ -6,16 +6,15 @@ namespace final_app
 {
     public partial class App : Application
     {
-        
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
-        {        
+        {
+            MainPage.BackgroundColor = Xamarin.Forms.Color.LightSlateGray;
         }
 
         protected override void OnSleep()

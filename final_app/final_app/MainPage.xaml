@@ -8,13 +8,12 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        
-        <Label Text="Welcome to FitGit!" FontSize="Large"
-           HorizontalOptions="Center"
-           VerticalOptions="StartAndExpand" />
-        
-        <Button Text="Login"/>
-        <Button Text="Sign Up"/>
+
+        <Label x:Name="FitGit_label" VerticalOptions="Center" HorizontalOptions="Center"
+            Text="FitGit" FontSize="30"/>
+        <Image Source="Logo.png" VerticalOptions="Center" HorizontalOptions="Center"/>
+        <Button x:Name="Login" Text="Login" VerticalOptions="End" Clicked="login_clicked"/>
+        <Button x:Name="Sign_up" Text="Sign Up" VerticalOptions="End" Clicked="sign_up_clicked"/>
     </StackLayout>
 
 </ContentPage>
