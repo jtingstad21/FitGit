@@ -7,9 +7,7 @@
              x:Class="final_app.MainPage">
 
     <StackLayout>
-        <!-- Place new controls here -->
-
-        <Label x:Name="FitGit_label" VerticalOptions="Center" HorizontalOptions="Center"
+        <Label x:Name="FitGit_label" VerticalOptions="Start" HorizontalOptions="Center"
             Text="FitGit" FontSize="30"/>
         <Image Source="Logo.png" VerticalOptions="Center" HorizontalOptions="Center"/>
         <Button x:Name="Login" Text="Login" VerticalOptions="End" Clicked="login_clicked"/>

@@ -26,10 +26,5 @@ namespace final_app
         {
             Navigation.PushAsync(new SignUpPage());
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }

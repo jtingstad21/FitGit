@@ -6,7 +6,8 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <application android:label="final_app.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
-    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="final_app" android:theme="@style/MainTheme" android:name="crc646be17d43d79b9598.MainActivity">
+    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="final_app" android:theme="@style/MainTheme" android:name="crc646be17d43d79b9598.MainActivity" />
+    <activity android:noHistory="true" android:theme="@style/Logo.Splash" android:name="crc646be17d43d79b9598.SplashScreen">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
