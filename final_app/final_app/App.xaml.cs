@@ -1,11 +1,14 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Firebase.Database;
+using Firebase.Database.Query;
 
 namespace final_app
 {
     public partial class App : Application
     {
+
         public App()
         {
             InitializeComponent();
