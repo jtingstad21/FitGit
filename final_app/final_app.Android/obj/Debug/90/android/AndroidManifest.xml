@@ -2,12 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.final_app">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
   <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-feature android:name="android.hardware.camera" android:required="false" />
   <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <application android:label="final_app.Android" android:name="android.app.Application" android:allowBackup="true" android:icon="@mipmap/icon" android:debuggable="true">
+    <!--<provider android:name="android.support.v4.contemt.FileProvider" android:authorities="com.companyname.XamarinForms"-->
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="final_app" android:theme="@style/MainTheme" android:name="crc646be17d43d79b9598.MainActivity" />
     <activity android:noHistory="true" android:theme="@style/Logo.Splash" android:name="crc646be17d43d79b9598.SplashScreen">
       <intent-filter>

@@ -1,8 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Firebase.Database;
-using Firebase.Database.Query;
+﻿using Xamarin.Forms;
 
 namespace final_app
 {
@@ -17,7 +13,7 @@ namespace final_app
 
         protected override void OnStart()
         {
-            MainPage.BackgroundColor = Xamarin.Forms.Color.LightSlateGray;
+            MainPage.BackgroundColor = Color.LightSlateGray;
         }
 
         protected override void OnSleep()

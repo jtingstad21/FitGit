@@ -50,6 +50,10 @@
               "target": "Package",
               "version": "[1.0.3, )"
             },
+            "LiveXAML": {
+              "target": "Package",
+              "version": "[2.1.73, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

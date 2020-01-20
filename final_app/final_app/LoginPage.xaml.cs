@@ -1,30 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Firebase.Database.Query;
-using Firebase.Database;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using final_app_Firebase;
 
 namespace final_app
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-        public FirebaseClient myfirebase = new FirebaseClient("https://fitgit-e60fb.firebaseio.com/");
-
+        FirebaseHelper helper = new FirebaseHelper();
+        string UserName = "";
+        string Password = "";
         public LoginPage()
         {
             InitializeComponent();
         }
-        public void btn_clicked(object sender, EventArgs e)
+        public async void btn_clicked(object sender, EventArgs e)
         {
-            // Connect to database and validate user credentials
-            myfirebase 
-
-
+            UserName = uname_line.Text;
+            Password = pw_line.Text;
+            if((await helper.isCorrectpWUn(UserName, Password)))
+            {
+                //correct get user now current user is this one
+            }
+            else
+            {
+                uname_line.Text = string.Empty;
+                pw_line.Text = string.Empty;
+                await DisplayAlert("Incorrect Username or Password", "You have entered either an invalid username or invalid password for the username.", "Ok");
+            }
+           
         }
     }
 }

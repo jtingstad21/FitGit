@@ -44,7 +44,6 @@ C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\bin\Debug\netstandard2.
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\bin\Debug\netstandard2.0\ref\final_app.dll
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\bin\Debug\netstandard2.0\final_app.pdb
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.csprojAssemblyReference.cache
-C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\LoginPage.xaml.g.cs
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\SignUpPage.xaml.g.cs
@@ -53,3 +52,6 @@ C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.dll
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\ref\final_app.dll
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.pdb
+C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\SearchBrowsePage.xaml.g.cs
+C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\XamlC.stamp

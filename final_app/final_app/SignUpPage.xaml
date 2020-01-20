@@ -30,7 +30,7 @@
                    VerticalOptions="Center" HorizontalOptions="Center" IsPassword="True"/>
             <Entry x:Name="pw_again" Placeholder="Confirm Password" 
                    WidthRequest="175" VerticalOptions="Center" HorizontalOptions="Center" IsPassword="True"/>
-            <Button x:Name="enter_btn" Text="Enter" Clicked="enter_clicked" 
+            <Button x:Name="enter_btn" Text="Sign Up" Clicked="enter_clicked" 
                     BackgroundColor="CadetBlue" HorizontalOptions="Center" VerticalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>

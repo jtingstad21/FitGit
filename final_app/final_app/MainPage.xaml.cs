@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
-using Firebase.Storage;
 
 namespace final_app
 {
@@ -19,13 +14,13 @@ namespace final_app
         {
             InitializeComponent();
         }
-        void login_clicked(object sender, System.EventArgs e)
+        async void login_clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new LoginPage());
         }
-        void sign_up_clicked(object sender, System.EventArgs e)
+        async void sign_up_clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SignUpPage());
+            await Navigation.PushAsync(new SignUpPage());
         }
     }
 }

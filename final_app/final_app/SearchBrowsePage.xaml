@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="final_app.SearchBrowsePage"
+             NavigationPage.HasBackButton="False">
+    <NavigationPage.TitleView >
+        <Picker x:Name="Menu_bar" Title="Menu" HorizontalOptions="Start">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Baboon</x:String>
+                    <x:String>Capuchin Monkey</x:String>
+                    <x:String>Blue Monkey</x:String>
+                    <x:String>Squirrel Monkey</x:String>
+                    <x:String>Golden Lion Tamarin</x:String>
+                    <x:String>Howler Monkey</x:String>
+                    <x:String>Japanese Macaque</x:String>
+                    <x:String>Menu</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        
+        
+
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<SearchBar Placeholder="Search" x:Name="SearchBar" SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}" SearchButtonPressed="SearchFor">
+            </SearchBar>-->
+            <ScrollView>
+                <StackLayout>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Aerobics" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label  Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Backpacking" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Badminton" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Baseball/Softball" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Basketball" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Biking" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Biking (Mountain)" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Biking (Stationary" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Bowling" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Boxing" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Callisthenics" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Canoeing/Kayaking" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Cardio" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Conditioning Circuit" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Dancing (Ballet)" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Dancing (Ballroom)" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Dancing (Disco)" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Dancing (Line)" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Dancing (Swing)" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                    <ContentView BackgroundColor="LightGray">
+                        <StackLayout>
+                            <Label Text="Elliptical" FontAttributes="Bold" FontSize="Title" HorizontalOptions="Center" ></Label>
+                            <Label Text="Intensity Level: Medium" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Calories Burned: 56" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Label Text="Total Intensity Minutes: 13" Padding="5,0,0,0" FontSize="Body"></Label>
+                            <Button Text="Add to Calorie Calculator" BackgroundColor="Green" VerticalOptions="End" FontSize="Medium"></Button>
+                        </StackLayout>
+                    </ContentView>
+                </StackLayout>
+            </ScrollView>
+            <Button Text="See Calorie Calculator" VerticalOptions="End" Margin="0,-7,0,0"></Button>
+        </StackLayout>
+        
+        
+    </ContentPage.Content>
+</ContentPage>
