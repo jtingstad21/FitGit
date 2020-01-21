@@ -21,7 +21,8 @@ namespace final_app
             Password = pw_line.Text;
             if((await helper.isCorrectpWUn(UserName, Password)))
             {
-                //correct get user now current user is this one
+                await Navigation.PushAsync(new SearchBrowsePage(UserName));
+                await DisplayAlert("Welcome Back", "Welcome Back to FitGit " + UserName + "!", "Continue");
             }
             else
             {

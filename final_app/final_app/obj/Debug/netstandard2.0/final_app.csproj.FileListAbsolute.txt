@@ -54,4 +54,5 @@ C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.pdb
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\SearchBrowsePage.xaml.g.cs
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\CalorieCalculator.xaml.g.cs
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\XamlC.stamp

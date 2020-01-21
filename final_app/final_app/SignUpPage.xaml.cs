@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using final_app_Firebase;
+using System.Collections.Generic;
 
 namespace final_app
 {
@@ -13,9 +14,11 @@ namespace final_app
         string Password = "";
         string DateOfBirth = "";
         double Weight = 0.0;
+        
+        
         public SignUpPage()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         private async void enter_clicked(object sender, EventArgs e)
@@ -30,16 +33,29 @@ namespace final_app
                 {
                     Weight = weightVal;
                     if (pw_line.Text == pw_again.Text)
-                    {          
-                        //deal with exercise list
-                        await helper.AddUser(Password, Username, DateOfBirth, Weight);
-                        uname_line.Text = string.Empty;
-                        pw_line.Text = string.Empty;
-                        pw_again.Text = string.Empty;
-                        weight_line.Text = string.Empty;
-                        DOB_label.Text = string.Empty;
-                        await DisplayAlert("Success", "You have been successfully added.", "Ok");
-                        await Navigation.PushAsync(new SearchBrowsePage());
+                    {
+                        if (pw_line.Text.Length > 7)
+                        {
+                            //deal with exercise list
+                            await helper.AddUser(Password, Username, DateOfBirth, Weight);
+                            await DisplayAlert("Success", "You have been successfully added.", "Ok");
+                            uname_line.Text = string.Empty;
+                            pw_line.Text = string.Empty;
+                            pw_again.Text = string.Empty;
+                            weight_line.Text = string.Empty;
+                            DOB_label.Text = string.Empty;
+                            await Navigation.PushAsync(new SearchBrowsePage(Username));
+                        }
+                        else
+                        {  
+                            await DisplayAlert("Failed", "Password must be at least 8 characters.", "Ok");
+                            uname_line.Text = string.Empty;
+                            pw_line.Text = string.Empty;
+                            pw_again.Text = string.Empty;
+                            weight_line.Text = string.Empty;
+                            DOB_label.Text = string.Empty;
+                        }
+                        
                     }
                     else
                     {

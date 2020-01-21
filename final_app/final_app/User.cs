@@ -13,13 +13,16 @@ namespace final_app
         //private string Password
         //private string U_Name;
         //private double Weight;
-        private List<List<string>> ex_list;
+        //public List<ExerciseList> ex_list;
         public List<List<string>> ex_hist;
+        public List<Tuple<string, Nullable<double>>> ex_list;
 
-        public List<List<string>> exercise_List
+        public List<FirebaseObject<List<string>>> tester
         {
-            get { return ex_list; }
+            get;
+            set;
         }
+
         public string Password
         {
             get;
@@ -42,6 +45,12 @@ namespace final_app
         {
             get;
             set;
+        }
+
+        public List<List<string>> exhisttest
+        {
+            get { return ex_hist; }
+            set { ex_hist = exhisttest; }
         }
 
         //public string getPW()

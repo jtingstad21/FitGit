@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry x:Name="uname_line" Placeholder="Username" WidthRequest="175" 
-                   VerticalOptions="Center" HorizontalOptions="Center"/>
+                   VerticalOptions="Center" HorizontalOptions="Center" />
             <Entry x:Name="weight_line" Placeholder="Weight (lbs)" WidthRequest="175" 
                    VerticalOptions="Center" HorizontalOptions="Center"/>
 
