@@ -44,7 +44,7 @@ namespace final_app
                             pw_again.Text = string.Empty;
                             weight_line.Text = string.Empty;
                             DOB_label.Text = string.Empty;
-                            await Navigation.PushAsync(new SearchBrowsePage(Username));
+                            await Navigation.PushAsync(new SearchBrowsePage(await helper.getUser(Username)));
                         }
                         else
                         {  

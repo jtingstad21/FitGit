@@ -9,13 +9,13 @@
       </Properties>
     </XamlFileMeta>
     <XamlFileMeta>
-      <FilePath>C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\CalorieCalculator.xaml</FilePath>
-      <Hash>EE-98-A1-C8-70-2A-AF-33-52-AA-B4-C6-60-96-68-8A</Hash>
+      <FilePath>C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\ExerciseHistoryDisplay.xaml</FilePath>
+      <Hash>F7-29-00-F0-26-0C-72-40-58-62-A8-AB-2C-F9-CC-78</Hash>
       <Properties />
     </XamlFileMeta>
     <XamlFileMeta>
       <FilePath>C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\LoginPage.xaml</FilePath>
-      <Hash>2E-67-72-A5-C2-25-CB-B9-24-9F-EB-87-DE-07-4E-2D</Hash>
+      <Hash>9E-97-51-AF-2F-19-22-67-5B-03-15-26-92-5A-2C-E3</Hash>
       <Properties />
     </XamlFileMeta>
     <XamlFileMeta>
@@ -27,7 +27,7 @@
     </XamlFileMeta>
     <XamlFileMeta>
       <FilePath>C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\SearchBrowsePage.xaml</FilePath>
-      <Hash>18-57-0C-D8-F4-63-B6-3E-58-8C-CD-86-18-A3-1C-66</Hash>
+      <Hash>99-D0-A6-A6-04-5D-A3-B5-73-D4-54-31-70-36-92-2F</Hash>
       <Properties>
         <string>NavigationPage.HasBackButton</string>
       </Properties>
