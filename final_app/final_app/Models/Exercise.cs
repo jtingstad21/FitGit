@@ -17,7 +17,7 @@ namespace final_app.Models
             Name = n;
             MET = M;
             Intensity = "Low";
-            //ExerciseTime = 0.0;
+            ExerciseTime = 0.0;
         }
 
         public double ExerciseTime
@@ -61,16 +61,16 @@ namespace final_app.Models
             double cals = 0;
             if (this.Intensity == "High")
             {
-                cals = (this.MET * Min * 3.5 * Weight) / 200;
+                cals = (this.MET * Min * 3.5 * (Weight/2.2)) / 200;
                 cals = cals * 1.25;
             }
             else if (this.Intensity == "Medium")
             {
-                cals = (this.MET * Min * 3.5 * Weight) / 200;
+                cals = (this.MET * Min * 3.5 * (Weight / 2.2)) / 200;
             }
             else
             {
-                cals = (this.MET * Min * 3.5 * Weight) / 200;
+                cals = (this.MET * Min * 3.5 * (Weight / 2.2)) / 200;
                 cals = cals * 0.75;
             }
             CaloriesVal = cals;

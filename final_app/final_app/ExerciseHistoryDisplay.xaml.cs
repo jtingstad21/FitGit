@@ -118,7 +118,7 @@ namespace final_app
             TOtalCalVal.Text = val.ToString("0.00");
         }
 
-        public async void ClearHistory(object sender, EventArgs e)
+        public async void ClearHistory(object sender, EventArgs e)//need to clear the calories burned on the home screen
         {
             CurrentUser.ex_hist.Clear();
             OverheadStacklayout.Children.Clear();

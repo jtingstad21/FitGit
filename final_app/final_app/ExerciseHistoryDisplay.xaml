@@ -5,18 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="final_app.ExerciseHistoryDisplay">
-
     <ContentPage.ToolbarItems >
         <ToolbarItem Text="Home" Order="Primary" Clicked="Gohome"></ToolbarItem>
         <ToolbarItem Text="Log Out" Order="Secondary" Clicked="Logout"></ToolbarItem>
         <ToolbarItem Text="Delete Account" Order="Secondary" Clicked="DeleteAccount"></ToolbarItem>
     </ContentPage.ToolbarItems>
-
     <ContentPage.Content>
         <StackLayout>
             <ScrollView>
                 <StackLayout x:Name="OverheadStacklayout">
-                    
+                    <!--Where all of the exercies will be generated-->
                 </StackLayout>
             </ScrollView>
             <ContentView BackgroundColor="LightGray">

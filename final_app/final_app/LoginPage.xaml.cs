@@ -23,7 +23,7 @@ namespace final_app
             {
                 
                 await Navigation.PushAsync(new SearchBrowsePage(await helper.getUser(UserName)));
-                await DisplayAlert("Welcome Back", "Welcome Back to FitGit " + UserName + "!", "Continue");
+                await DisplayAlert("Welcome Back", "Welcome Back to FitGit " + UserName + "!\nAll of your previous data has been reloaded.", "Continue");
             }
             else
             {

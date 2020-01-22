@@ -106,7 +106,7 @@ namespace final_app
                 
                 OverheadStacklayoutm.Children.Add(myContentView);
             }
-            //ExerciseTime.Text = CurrentUser.ex_list[0].ExerciseTime.ToString("0.00");
+            ExerciseTime.Text = CurrentUser.ex_list[0].ExerciseTime.ToString("0.00");
             fakeBTNClikEVnt(CurrentUser.ex_list[0].Intensity);
         }
 
@@ -182,13 +182,14 @@ namespace final_app
 
         
 
-        public async void AddCalories(object sender, EventArgs e)
+        public async void AddCalories(object sender, EventArgs e)// keep between starts of app
         {
+
             var button = sender as Button;
             double.TryParse(TotalCal.Text, out double numBurnt);
             Exercise exe = button.CommandParameter as Exercise;
             double.TryParse(ExerciseTime.Text, out double time);
-            numBurnt += exe.Calories((CurrentUser.ex_list.Find(x => x.ExerciseTime == exe.ExerciseTime)).ExerciseTime, CurrentUser.Weight);
+            numBurnt += exe.Calories((CurrentUser.ex_list.Find(x => x.Name == exe.Name)).ExerciseTime, CurrentUser.Weight);
             TotalCal.Text = numBurnt.ToString("0.00");
             holder.Add(CurrentUser.ex_list.Find(x => x.Name == exe.Name));
             await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, holder, CurrentUser.ex_list);
@@ -234,6 +235,113 @@ namespace final_app
         {
             CurrentUser = new User();
             await Navigation.PushAsync(new MainPage());
+        }
+
+        public void SearchTextChanged(object sender, TextChangedEventArgs e)
+        {
+            //bool display = true;
+            OverheadStacklayoutm.Children.Clear();
+            //foreach (ContentView CV in OverheadStacklayoutm.Children)
+            //{
+            //    StackLayout slOne = CV.Content as StackLayout;
+            //    if(!(slOne.Children[0] as Label).Text.Contains(e.NewTextValue))
+            //    {
+
+            //        CV.IsVisible = false;
+            //    }
+            //}
+            //CurrentUser.ex_list[0].Name;
+            foreach (Exercise ex in CurrentUser.ex_list)
+            {
+
+                string name = ex.Name.ToLower();
+                if (name.Contains(e.NewTextValue.ToLower() ))
+                {
+
+                    ContentView myContentView = new ContentView();
+                    StackLayout StackLayoutTop = new StackLayout();
+                    Label topLabel = new Label();
+
+                    StackLayout StackLayoutIntensity = new StackLayout();
+                    Label IntLabel1 = new Label();
+                    Label IntLabel2 = new Label();
+
+                    StackLayout StackLayoutCals = new StackLayout();
+                    Label CalLabel1 = new Label();
+                    Label CalLabel2 = new Label();
+
+                    StackLayout StackLayoutIntMins = new StackLayout();
+                    Label IntMinLabel1 = new Label();
+                    Label IntMinLabel2 = new Label();
+
+                    Button addEx = new Button();
+
+                    myContentView.BackgroundColor = Color.LightGray;
+                    StackLayoutIntensity.Orientation = StackOrientation.Horizontal;
+                    StackLayoutCals.Orientation = StackOrientation.Horizontal;
+                    StackLayoutIntMins.Orientation = StackOrientation.Horizontal;
+
+                    topLabel.Text = ex.Name;
+                    topLabel.FontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label));
+                    topLabel.FontAttributes = FontAttributes.Bold;
+                    topLabel.HorizontalOptions = LayoutOptions.Center;
+
+                    IntLabel1.Text = "Intensity level: ";
+                    IntLabel1.Padding = new Thickness(5, 0, 0, 0);
+                    IntLabel1.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
+
+                    IntLabel2.Text = ex.Intensity;
+                    IntLabel2.Padding = new Thickness(-5, 0, 0, 0);
+                    IntLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
+
+                    CalLabel1.Text = "Calories burned: ";
+                    CalLabel1.Padding = new Thickness(5, 0, 0, 0);
+                    CalLabel1.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
+
+                    CalLabel2.Text = ex.Calories(ex.MET, CurrentUser.Weight).ToString("0.00");
+                    CalLabel2.Padding = new Thickness(-5, 0, 0, 0);
+                    CalLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
+
+                    IntMinLabel1.Text = "Intensity minutes: ";
+                    IntMinLabel1.Padding = new Thickness(5, 0, 0, 0);
+                    IntMinLabel1.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
+
+                    IntMinLabel2.Text = ex.IntMins(0).ToString("0.00");
+                    IntMinLabel2.Padding = new Thickness(-5, 0, 0, 0);
+                    IntMinLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
+
+                    addEx.Text = "Add to exercise list";
+                    addEx.Clicked += AddCalories;
+                    addEx.BackgroundColor = Color.Green;
+                    addEx.VerticalOptions = LayoutOptions.End;
+                    addEx.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
+                    addEx.CommandParameter = ex;
+
+                    StackLayoutIntensity.Children.Add(IntLabel1);
+                    StackLayoutIntensity.Children.Add(IntLabel2);
+
+                    StackLayoutCals.Children.Add(CalLabel1);
+                    StackLayoutCals.Children.Add(CalLabel2);
+
+                    StackLayoutIntMins.Children.Add(IntMinLabel1);
+                    StackLayoutIntMins.Children.Add(IntMinLabel2);
+
+                    StackLayoutTop.Children.Add(topLabel);
+                    StackLayoutTop.Children.Add(StackLayoutIntensity);
+                    StackLayoutTop.Children.Add(StackLayoutCals);
+                    StackLayoutTop.Children.Add(StackLayoutIntMins);
+                    StackLayoutTop.Children.Add(addEx);
+
+                    myContentView.Content = StackLayoutTop;
+
+                    OverheadStacklayoutm.Children.Add(myContentView);
+                    //display = false;
+                }
+            }
+            //if (display)
+            //{
+            //    await DisplayAlert("No Results", "No results were found.", "Ok");
+            //}
         }
     }
 }
