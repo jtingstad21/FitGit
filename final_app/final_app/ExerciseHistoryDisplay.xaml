@@ -7,6 +7,7 @@
              x:Class="final_app.ExerciseHistoryDisplay">
 
     <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Home" Order="Primary" Clicked="Gohome"></ToolbarItem>
         <ToolbarItem Text="Log Out" Order="Secondary" Clicked="Logout"></ToolbarItem>
         <ToolbarItem Text="Delete Account" Order="Secondary" Clicked="DeleteAccount"></ToolbarItem>
     </ContentPage.ToolbarItems>
@@ -20,14 +21,14 @@
             </ScrollView>
             <ContentView BackgroundColor="LightGray">
                 <StackLayout Orientation="Horizontal" VerticalOptions="End">
-                    <Label Text="Total Calories Burned: "></Label>
-                    <Label x:Name="TOtalCalVal"  Text=""></Label>
+                    <Label Text="Total Calories Burned: " FontSize="Body" FontAttributes="Bold" Padding="5,0,0,0"></Label>
+                    <Label x:Name="TOtalCalVal"  Text="" FontSize="Body" Padding="-5,0,0,0"></Label>
                 </StackLayout>
             </ContentView>
             <ContentView BackgroundColor="LightGray">
                 <StackLayout Orientation="Horizontal" VerticalOptions="End">
-                    <Label Text="Total Intensity Minutes Gained: "></Label>
-                    <Label x:Name="TotINTMINS" Text=""></Label>
+                    <Label Text="Total Intensity Minutes Gained: " FontSize="Body" FontAttributes="Bold" Padding="5,0,0,0"></Label>
+                    <Label x:Name="TotINTMINS" Text="" FontSize="Body" Padding="-5,0,0,0"></Label>
                 </StackLayout>
             </ContentView>
             <Button Text="Clear Exercise History" HorizontalOptions="Center" VerticalOptions="End" BackgroundColor="Green" Clicked="ClearHistory"></Button>

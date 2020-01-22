@@ -17,6 +17,7 @@ namespace final_app.Models
             Name = n;
             MET = M;
             Intensity = "Low";
+            //ExerciseTime = 0.0;
         }
 
         public double ExerciseTime
@@ -72,6 +73,7 @@ namespace final_app.Models
                 cals = (this.MET * Min * 3.5 * Weight) / 200;
                 cals = cals * 0.75;
             }
+            CaloriesVal = cals;
             return cals;
         }
         public double IntMins(double min)

@@ -17,9 +17,16 @@ namespace final_app
         User CurrentUser = new User();
         public ExerciseHistoryDisplay(User CurrentUserval)
         {
+            helperFunc(CurrentUserval);
             InitializeComponent();
-            GetCurUser(CurrentUserval);
-            foreach (Exercise ex in CurrentUser.ex_hist)
+        }
+
+        public async void helperFunc(User user)
+        {
+            CurrentUser = await helper.getUser(user);
+            calcIntMins();
+            calcCalTotal();
+            for (int i = 0; i < CurrentUser.ex_hist.Count; i++)
             {
                 ContentView myContentView = new ContentView();
                 StackLayout StackLayoutTop = new StackLayout();
@@ -42,7 +49,7 @@ namespace final_app
                 StackLayoutCals.Orientation = StackOrientation.Horizontal;
                 StackLayoutIntMins.Orientation = StackOrientation.Horizontal;
 
-                topLabel.Text = ex.Name;
+                topLabel.Text = CurrentUser.ex_hist[i].Name;
                 topLabel.FontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label));
                 topLabel.FontAttributes = FontAttributes.Bold;
                 topLabel.HorizontalOptions = LayoutOptions.Center;
@@ -51,7 +58,7 @@ namespace final_app
                 IntLabel1.Padding = new Thickness(5, 0, 0, 0);
                 IntLabel1.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
 
-                IntLabel2.Text = ex.Intensity;
+                IntLabel2.Text = CurrentUser.ex_hist[i].Intensity;
                 IntLabel2.Padding = new Thickness(-5, 0, 0, 0);
                 IntLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
 
@@ -59,7 +66,7 @@ namespace final_app
                 CalLabel1.Padding = new Thickness(5, 0, 0, 0);
                 CalLabel1.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
 
-                CalLabel2.Text = ex.Calories(ex.MET, CurrentUser.Weight).ToString("0.00");
+                CalLabel2.Text = CurrentUser.ex_hist[i].CaloriesVal.ToString("0.00");
                 CalLabel2.Padding = new Thickness(-5, 0, 0, 0);
                 CalLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
 
@@ -67,7 +74,7 @@ namespace final_app
                 IntMinLabel1.Padding = new Thickness(5, 0, 0, 0);
                 IntMinLabel1.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
 
-                IntMinLabel2.Text = ex.IntMins(0).ToString("0.00");
+                IntMinLabel2.Text = CurrentUser.ex_hist[i].intMinutes.ToString("0.00");
                 IntMinLabel2.Padding = new Thickness(-5, 0, 0, 0);
                 IntMinLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
 
@@ -89,26 +96,17 @@ namespace final_app
 
                 OverheadStacklayout.Children.Add(myContentView);
             }
-            calcIntMins();
-            calcCalTotal();
         }
-        private async void GetCurUser(User user)
-        {
-            CurrentUser = await helper.getUser(user);
-        }
-
         private async void calcIntMins()
         {
             CurrentUser = await helper.getUser(CurrentUser);
             double val = 0.0;
             foreach(Exercise ex in CurrentUser.ex_hist)
             {
-                await DisplayAlert("Success", ex.intMinutes.ToString("0.00"), "Ok");
                 val += ex.intMinutes;
             }
             TotINTMINS.Text = val.ToString("0.00");
         }
-
 
         private void calcCalTotal()
         {
@@ -124,6 +122,8 @@ namespace final_app
         {
             CurrentUser.ex_hist.Clear();
             OverheadStacklayout.Children.Clear();
+            TOtalCalVal.Text = "0.00";
+            TotINTMINS.Text = "0.00";
             await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
         }
 
@@ -137,6 +137,11 @@ namespace final_app
         {
             CurrentUser = new User();
             await Navigation.PushAsync(new MainPage());
+        }
+
+        public async void Gohome(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SearchBrowsePage(await helper.getUser(CurrentUser)));
         }
     }
 }

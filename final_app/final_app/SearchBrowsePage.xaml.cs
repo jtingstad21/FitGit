@@ -15,14 +15,18 @@ namespace final_app
         List<Exercise> holder = new List<Exercise>();
         public SearchBrowsePage(User CurUserName)
         {
+            helperFunc(CurUserName);
             InitializeComponent();
-            CurrentUser = CurUserName;
-            if(CurrentUser.ex_hist.Count > 0)
+        }
+
+        public async void helperFunc(User user)
+        {
+            CurrentUser = await helper.getUser(user);
+            if (CurrentUser.ex_hist.Count > 0)
             {
                 holder = CurrentUser.ex_hist;
             }
-            //DisplayAlert("test", CurrentUser.ex_list[0].Intensity, "ok");
-            for(int i = 0; i < CurrentUser.ex_list.Count; i++)
+            for (int i = 0; i < CurrentUser.ex_list.Count; i++)
             {
                 ContentView myContentView = new ContentView();
                 StackLayout StackLayoutTop = new StackLayout();
@@ -99,95 +103,16 @@ namespace final_app
                 StackLayoutTop.Children.Add(addEx);
 
                 myContentView.Content = StackLayoutTop;
-
+                
                 OverheadStacklayoutm.Children.Add(myContentView);
             }
-
+            //ExerciseTime.Text = CurrentUser.ex_list[0].ExerciseTime.ToString("0.00");
             fakeBTNClikEVnt(CurrentUser.ex_list[0].Intensity);
-            //foreach (Exercise ex in CurrentUser.ex_list)
-            //{
-            //    ContentView myContentView = new ContentView();
-            //    StackLayout StackLayoutTop = new StackLayout();
-            //    Label topLabel = new Label();
-
-            //    StackLayout StackLayoutIntensity = new StackLayout();
-            //    Label IntLabel1 = new Label();
-            //    Label IntLabel2 = new Label();
-
-            //    StackLayout StackLayoutCals = new StackLayout();
-            //    Label CalLabel1 = new Label();
-            //    Label CalLabel2 = new Label();
-
-            //    StackLayout StackLayoutIntMins = new StackLayout();
-            //    Label IntMinLabel1 = new Label();
-            //    Label IntMinLabel2 = new Label();
-
-            //    Button addEx = new Button();
-
-            //    myContentView.BackgroundColor = Color.LightGray;
-            //    StackLayoutIntensity.Orientation = StackOrientation.Horizontal;
-            //    StackLayoutCals.Orientation = StackOrientation.Horizontal;
-            //    StackLayoutIntMins.Orientation = StackOrientation.Horizontal;
-
-            //    topLabel.Text = ex.Name;
-            //    topLabel.FontSize = Device.GetNamedSize(NamedSize.Title, typeof(Label));
-            //    topLabel.FontAttributes = FontAttributes.Bold;
-            //    topLabel.HorizontalOptions = LayoutOptions.Center;
-
-            //    IntLabel1.Text = "Intensity level: ";
-            //    IntLabel1.Padding = new Thickness(5, 0, 0, 0);
-            //    IntLabel1.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
-
-            //    IntLabel2.Text = ex.Intensity;
-            //    IntLabel2.Padding = new Thickness(-5, 0, 0, 0);
-            //    IntLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
-
-            //    CalLabel1.Text = "Calories burned: ";
-            //    CalLabel1.Padding = new Thickness(5, 0, 0, 0);
-            //    CalLabel1.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
-
-            //    CalLabel2.Text = ex.Calories(ex.MET, CurrentUser.Weight).ToString("0.00");
-            //    CalLabel2.Padding = new Thickness(-5, 0, 0, 0);
-            //    CalLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
-
-            //    IntMinLabel1.Text = "Intensity minutes: ";
-            //    IntMinLabel1.Padding = new Thickness(5, 0, 0, 0);
-            //    IntMinLabel1.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
-
-            //    IntMinLabel2.Text = ex.IntMins(0).ToString("0.00");
-            //    IntMinLabel2.Padding = new Thickness(-5, 0, 0, 0);
-            //    IntMinLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
-
-            //    addEx.Text = "Add to exercise list";
-            //    addEx.Clicked += AddCalories;
-            //    addEx.BackgroundColor = Color.Green;
-            //    addEx.VerticalOptions = LayoutOptions.End;
-            //    addEx.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
-            //    addEx.CommandParameter = ex;
-
-            //    StackLayoutIntensity.Children.Add(IntLabel1);
-            //    StackLayoutIntensity.Children.Add(IntLabel2);
-
-            //    StackLayoutCals.Children.Add(CalLabel1);
-            //    StackLayoutCals.Children.Add(CalLabel2);
-
-            //    StackLayoutIntMins.Children.Add(IntMinLabel1);
-            //    StackLayoutIntMins.Children.Add(IntMinLabel2);
-
-            //    StackLayoutTop.Children.Add(topLabel);
-            //    StackLayoutTop.Children.Add(StackLayoutIntensity);
-            //    StackLayoutTop.Children.Add(StackLayoutCals);
-            //    StackLayoutTop.Children.Add(StackLayoutIntMins);
-            //    StackLayoutTop.Children.Add(addEx);
-
-            //    myContentView.Content = StackLayoutTop;
-
-            //    OverheadStacklayoutm.Children.Add(myContentView);
-            //}
         }
 
         private async void fakeBTNClikEVnt(string val)
         {
+            CurrentUser = await helper.getUser(CurrentUser);
             foreach (ContentView CV in OverheadStacklayoutm.Children)
             {
                 StackLayout slOne = CV.Content as StackLayout;
@@ -209,12 +134,13 @@ namespace final_app
 
         public async void MinutesChanged(object sender, TextChangedEventArgs e)
         {
+            CurrentUser = await helper.getUser(CurrentUser);
             string newMin = e.NewTextValue;
             if(double.TryParse(newMin, out double newtime))
             {
-                foreach (Exercise ex in CurrentUser.ex_list)
+                for(int i = 0; i < CurrentUser.ex_list.Count; i++)
                 {
-                    ex.ExerciseTime = newtime;
+                    CurrentUser.ex_list[i].ExerciseTime = newtime;
                 }
                 setCalories();
                 setIntensityMinutes();
@@ -258,16 +184,13 @@ namespace final_app
 
         public async void AddCalories(object sender, EventArgs e)
         {
-
             var button = sender as Button;
             double.TryParse(TotalCal.Text, out double numBurnt);
             Exercise exe = button.CommandParameter as Exercise;
-            int index = CurrentUser.ex_list.IndexOf(exe);
             double.TryParse(ExerciseTime.Text, out double time);
-            numBurnt += exe.Calories(CurrentUser.ex_list[index].ExerciseTime, CurrentUser.Weight);
+            numBurnt += exe.Calories((CurrentUser.ex_list.Find(x => x.ExerciseTime == exe.ExerciseTime)).ExerciseTime, CurrentUser.Weight);
             TotalCal.Text = numBurnt.ToString("0.00");
-            holder.Add(exe);
-            //CurrentUser.ex_hist.Add(exe);
+            holder.Add(CurrentUser.ex_list.Find(x => x.Name == exe.Name));
             await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, holder, CurrentUser.ex_list);
             CurrentUser.ex_hist = (await helper.getUser(CurrentUser.UserName)).ex_hist;
             await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
@@ -275,11 +198,8 @@ namespace final_app
 
         public async void setIntensityLvl(object sender, EventArgs e)
         {
-            //List<Exercise> holder = new List<Exercise>();
-            //holder = CurrentUser.ex_hist;
+            CurrentUser = await helper.getUser(CurrentUser);
             var button = sender as Button;
-            //string test = button.Text;
-            //test.Replace(" Intensity", "");
             foreach (ContentView CV in OverheadStacklayoutm.Children)
             {
                 StackLayout slOne = CV.Content as StackLayout;
@@ -288,41 +208,11 @@ namespace final_app
                 IntensityValue.Text = button.CommandParameter.ToString();
             }
 
-            //if (CurrentUser.ex_hist.Count > 0)
-            //{
-                
-                
-            //    await DisplayAlert("Success", CurrentUser.ex_hist[CurrentUser.ex_hist.Count - 1].Intensity, "Ok");
-            //    await DisplayAlert("Success", holder[holder.Count - 1].Intensity, "Ok");
-            //    //for (int i = 0; i < CurrentUser.ex_list.Count; i++)
-            //    //{
-            //        CurrentUser.ex_list[0].Intensity = test;
-            //    //}
-            //    //foreach (Exercise ex in CurrentUser.ex_list)//for some reason changing values in ex_hist
-            //    //{
-            //    //    ex.Intensity = button.CommandParameter.ToString();
-            //    //    ex.CaloriesVal = ex.Calories(ex.ExerciseTime, CurrentUser.Weight);
-            //    //}
-            //    await DisplayAlert("Success", holder[holder.Count - 1].Intensity, "Ok");//different from above
-            //    for (int i = 0; i < CurrentUser.ex_hist.Count; i++)
-            //    {
-            //        CurrentUser.ex_hist[i].Intensity = holder[i].Intensity;
-            //    }
-            //    await DisplayAlert("Success", holder[holder.Count - 1].Intensity, "Ok");//different from above
-            //    await DisplayAlert("Success", CurrentUser.ex_hist[CurrentUser.ex_hist.Count-1].Intensity, "Ok");//different from above
-            //}
-            //else
-            //{
-                
-            //}
-
-
             foreach (Exercise ex in CurrentUser.ex_list)
             {
                 ex.Intensity = button.CommandParameter.ToString();
                 ex.CaloriesVal = ex.Calories(ex.ExerciseTime, CurrentUser.Weight);
             }
-
 
             setIntensityMinutes();
             setCalories();
