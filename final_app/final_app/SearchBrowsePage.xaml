@@ -16,20 +16,20 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar Placeholder="Search" ></SearchBar>
+            <!--<SearchBar Placeholder="Search" ></SearchBar>-->
             <!--<SearchBar Placeholder="Search" x:Name="SearchBar" SearchCommand="{Binding SearchCommand}" SearchCommandParameter="{Binding Text, Source={x:Reference SearchBar}}" SearchButtonPressed="SearchFor">
             </SearchBar>-->
             <ScrollView>
-                <StackLayout x:Name="OverheadStacklayout">
+                <StackLayout x:Name="OverheadStacklayoutm">
                     <!--Where all of the exercies will be generated-->
                 </StackLayout>
             </ScrollView>
             <Entry x:Name="ExerciseTime" Placeholder="Exercise minutes" TextChanged="MinutesChanged"></Entry>
             <ContentView>
                 <StackLayout Orientation="Horizontal" Spacing="2" Padding="2.5,-5,2.5,-5">
-                    <Button Text="Low Intensity" Clicked="setIntensityLvl" CommandParameter="Low" ></Button>
-                    <Button Text="Medium Intensity" Clicked="setIntensityLvl" CommandParameter="Medium" ></Button>
-                    <Button Text="High Intensity" Clicked="setIntensityLvl" CommandParameter="High" ></Button>
+                    <Button Text="Low Intensity" Clicked="setIntensityLvl" CommandParameter="Low"></Button>
+                    <Button Text="Medium Intensity" Clicked="setIntensityLvl" CommandParameter="Medium"></Button>
+                    <Button Text="High Intensity" Clicked="setIntensityLvl" CommandParameter="High"></Button>
                 </StackLayout>
             </ContentView>
             <ContentView BackgroundColor="LightGray">

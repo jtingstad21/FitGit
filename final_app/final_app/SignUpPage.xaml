@@ -27,9 +27,10 @@
             </Grid>
             
             <Entry x:Name="pw_line" Placeholder="Password" WidthRequest="175" 
-                   VerticalOptions="Center" HorizontalOptions="Center" IsPassword="True"/>
+                   VerticalOptions="Center" HorizontalOptions="Center" IsPassword="True" Text=""/>
             <Entry x:Name="pw_again" Placeholder="Confirm Password" 
-                   WidthRequest="175" VerticalOptions="Center" HorizontalOptions="Center" IsPassword="True"/>
+                   WidthRequest="175" VerticalOptions="Center" HorizontalOptions="Center" IsPassword="True"
+                   Text=""/>
             <Button x:Name="enter_btn" Text="Sign Up" Clicked="enter_clicked" 
                     BackgroundColor="CadetBlue" HorizontalOptions="Center" VerticalOptions="Center"/>
         </StackLayout>

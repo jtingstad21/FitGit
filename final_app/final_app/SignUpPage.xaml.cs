@@ -34,9 +34,8 @@ namespace final_app
                     Weight = weightVal;
                     if (pw_line.Text == pw_again.Text)
                     {
-                        if (pw_line.Text.Length > 7)
-                        {
-                            //deal with exercise list
+                        //if (pw_line.Text.Length > 7)
+                        //{
                             await helper.AddUser(Password, Username, DateOfBirth, Weight);
                             await DisplayAlert("Success", "You have been successfully added.", "Ok");
                             uname_line.Text = string.Empty;
@@ -45,21 +44,21 @@ namespace final_app
                             weight_line.Text = string.Empty;
                             DOB_label.Text = string.Empty;
                             await Navigation.PushAsync(new SearchBrowsePage(await helper.getUser(Username)));
-                        }
-                        else
-                        {  
-                            await DisplayAlert("Failed", "Password must be at least 8 characters.", "Ok");
-                            uname_line.Text = string.Empty;
-                            pw_line.Text = string.Empty;
-                            pw_again.Text = string.Empty;
-                            weight_line.Text = string.Empty;
-                            DOB_label.Text = string.Empty;
-                        }
-                        
+                        //}
+                        //else
+                        //{
+                        //    await DisplayAlert("Failed", "Password must be at least 8 characters.", "Ok");
+                        //    uname_line.Text = string.Empty;
+                        //    pw_line.Text = string.Empty;
+                        //    pw_again.Text = string.Empty;
+                        //    weight_line.Text = string.Empty;
+                        //    DOB_label.Text = string.Empty;
+                        //}
+
                     }
                     else
                     {
-                        await DisplayAlert("Passwords Do Not Match", "The passwords entered do not match each other.", "Ok");
+                        await DisplayAlert("Password Invalid", "The passwords entered do not match each other and or are less than 8 characters.", "Ok");
                         pw_line.Text = string.Empty;
                         pw_again.Text = string.Empty;
                     }

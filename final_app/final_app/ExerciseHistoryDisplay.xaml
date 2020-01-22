@@ -5,6 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="final_app.ExerciseHistoryDisplay">
+
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Log Out" Order="Secondary" Clicked="Logout"></ToolbarItem>
+        <ToolbarItem Text="Delete Account" Order="Secondary" Clicked="DeleteAccount"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout>
             <ScrollView>
@@ -12,15 +18,19 @@
                     
                 </StackLayout>
             </ScrollView>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Total Calories Burned: "></Label>
-                <Label Text="NULL"></Label>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Total Intensity Minutes Gained: "></Label>
-                <Label Text="NULL"></Label>
-            </StackLayout>
-            <Button Text="Clear Exercise History" HorizontalOptions="Center" VerticalOptions="End" BackgroundColor="Green"></Button>
+            <ContentView BackgroundColor="LightGray">
+                <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                    <Label Text="Total Calories Burned: "></Label>
+                    <Label x:Name="TOtalCalVal"  Text=""></Label>
+                </StackLayout>
+            </ContentView>
+            <ContentView BackgroundColor="LightGray">
+                <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                    <Label Text="Total Intensity Minutes Gained: "></Label>
+                    <Label x:Name="TotINTMINS" Text=""></Label>
+                </StackLayout>
+            </ContentView>
+            <Button Text="Clear Exercise History" HorizontalOptions="Center" VerticalOptions="End" BackgroundColor="Green" Clicked="ClearHistory"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

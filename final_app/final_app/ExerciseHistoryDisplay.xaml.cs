@@ -15,11 +15,11 @@ namespace final_app
     {
         FirebaseHelper helper = new FirebaseHelper();
         User CurrentUser = new User();
-        public ExerciseHistoryDisplay(User CurrentUser)
+        public ExerciseHistoryDisplay(User CurrentUserval)
         {
             InitializeComponent();
-            this.CurrentUser = CurrentUser;
-            foreach (Exercise ex in this.CurrentUser.ex_hist)
+            GetCurUser(CurrentUserval);
+            foreach (Exercise ex in CurrentUser.ex_hist)
             {
                 ContentView myContentView = new ContentView();
                 StackLayout StackLayoutTop = new StackLayout();
@@ -89,9 +89,54 @@ namespace final_app
 
                 OverheadStacklayout.Children.Add(myContentView);
             }
+            calcIntMins();
+            calcCalTotal();
+        }
+        private async void GetCurUser(User user)
+        {
+            CurrentUser = await helper.getUser(user);
+        }
+
+        private async void calcIntMins()
+        {
+            CurrentUser = await helper.getUser(CurrentUser);
+            double val = 0.0;
+            foreach(Exercise ex in CurrentUser.ex_hist)
+            {
+                await DisplayAlert("Success", ex.intMinutes.ToString("0.00"), "Ok");
+                val += ex.intMinutes;
+            }
+            TotINTMINS.Text = val.ToString("0.00");
+        }
 
 
+        private void calcCalTotal()
+        {
+            double val = 0.0;
+            foreach (Exercise ex in CurrentUser.ex_hist)
+            {
+                val += ex.CaloriesVal;
+            }
+            TOtalCalVal.Text = val.ToString("0.00");
+        }
 
+        public async void ClearHistory(object sender, EventArgs e)
+        {
+            CurrentUser.ex_hist.Clear();
+            OverheadStacklayout.Children.Clear();
+            await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
+        }
+
+        public async void DeleteAccount(object sender, EventArgs e)
+        {
+            await helper.DeleteUser(CurrentUser.UserName, CurrentUser.Password);
+            await Navigation.PushAsync(new MainPage());
+        }
+
+        public async void Logout(object sender, EventArgs e)
+        {
+            CurrentUser = new User();
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }

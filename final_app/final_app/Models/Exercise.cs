@@ -18,12 +18,6 @@ namespace final_app.Models
             MET = M;
             Intensity = "Low";
         }
-        public Exercise(string n, double M, string I)
-        {
-            Name = n;
-            MET = M;
-            Intensity = I;
-        }
 
         public double ExerciseTime
         {
@@ -50,6 +44,12 @@ namespace final_app.Models
         }
 
         public double CaloriesVal
+        {
+            get;
+            set;
+        }
+
+        public double intMinutes
         {
             get;
             set;
@@ -89,6 +89,7 @@ namespace final_app.Models
             {
                 mins = 0.5 * min;
             }
+            intMinutes = mins;
             return mins;
         }
     }

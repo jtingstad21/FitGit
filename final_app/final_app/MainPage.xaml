@@ -11,7 +11,7 @@
         <Label x:Name="FitGit_label" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"
             Text="FitGit" FontSize="30"/>
         <Image Source="Logo.png" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
-        <Button x:Name="Login" Text="Login" VerticalOptions="End" Clicked="login_clicked"/>
+        <Button x:Name="Login" Text="Log In" VerticalOptions="End" Clicked="login_clicked"/>
         <Button x:Name="Sign_up" Text="Sign Up" VerticalOptions="End" Clicked="sign_up_clicked"/>
     </StackLayout>
 
