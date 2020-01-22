@@ -88,5 +88,18 @@ namespace final_app_Firebase
                 .Child("Users")
                 .Child(keyUser.Key).PutAsync(new User() { DOB = dob, Password = password, UserName = user_name, Weight = weight, ex_hist = EX_hist, ex_list = EX_list });
         }
+
+        public async Task DeleteUser(string user_name, string password)
+        {
+            var keyUser = (await myfirebase
+                            .Child("Users")
+                            .OnceAsync<User>())
+                            .Where(a => a.Object.UserName == user_name && a.Object.Password == password).FirstOrDefault();
+
+            await myfirebase
+                .Child("Users")
+                .Child(keyUser.Key)
+                .DeleteAsync();
+        }
     }
 }

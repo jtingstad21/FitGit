@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using final_app.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using final_app_Firebase;
 
 namespace final_app
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ExerciseHistoryDisplay : ContentPage
     {
+        FirebaseHelper helper = new FirebaseHelper();
         User CurrentUser = new User();
         public ExerciseHistoryDisplay(User CurrentUser)
         {

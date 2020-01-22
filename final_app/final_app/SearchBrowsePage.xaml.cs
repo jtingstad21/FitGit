@@ -114,7 +114,9 @@ namespace final_app
             {
                 await DisplayAlert("Integers Only", "Integers can only be placed in this field!", "Ok");
                 ExerciseTime.Text = string.Empty;
-            }   
+            }
+
+            await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
         }
 
         public void setCalories()
@@ -143,12 +145,9 @@ namespace final_app
             }
         }
 
-        public async void ExerciseHistoryPage(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ExerciseHistoryDisplay(CurrentUser));
-        }
+        
 
-        public void AddCalories(object sender, EventArgs e)
+        public async void AddCalories(object sender, EventArgs e)
         {
             var button = sender as Button;
             double.TryParse(TotalCal.Text, out double numBurnt);
@@ -158,11 +157,11 @@ namespace final_app
             numBurnt += exe.Calories(time, CurrentUser.Weight);
             TotalCal.Text = numBurnt.ToString("0.00");
             CurrentUser.ex_hist.Add(exe);
+
+            await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
         }
 
-        
-
-        public void setIntensityLvl(object sender, EventArgs e)
+        public async void setIntensityLvl(object sender, EventArgs e)
         {
             var button = sender as Button;
 
@@ -183,6 +182,25 @@ namespace final_app
 
             setIntensityMinutes();
             setCalories();
+
+            await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
+        }
+
+        public async void ExerciseHistoryPage(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ExerciseHistoryDisplay(CurrentUser));
+        }
+
+        public async void DeleteAccount(object sender, EventArgs e)
+        {
+            await helper.DeleteUser(CurrentUser.UserName, CurrentUser.Password);
+            await Navigation.PushAsync(new MainPage());
+        }
+
+        public async void Logout(object sender, EventArgs e)
+        {
+            CurrentUser = new User();
+            await Navigation.PushAsync(new MainPage());
         }
     }
 }

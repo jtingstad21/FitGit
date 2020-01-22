@@ -6,7 +6,12 @@
              mc:Ignorable="d"
              x:Class="final_app.ExerciseHistoryDisplay">
     <ContentPage.Content>
-        <StackLayout x:Name="OverheadStacklayout">
+        <StackLayout>
+            <ScrollView>
+                <StackLayout x:Name="OverheadStacklayout">
+                    
+                </StackLayout>
+            </ScrollView>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Total Calories Burned: "></Label>
                 <Label Text="NULL"></Label>

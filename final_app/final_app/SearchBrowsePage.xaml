@@ -10,8 +10,8 @@
 
     <ContentPage.ToolbarItems >
         <ToolbarItem Text="Exercise History" Order="Primary" Clicked="ExerciseHistoryPage"></ToolbarItem>
-        <ToolbarItem Text="Log Out" Order="Secondary"></ToolbarItem>
-        <ToolbarItem Text="Delete Account" Order="Secondary"></ToolbarItem>
+        <ToolbarItem Text="Log Out" Order="Secondary" Clicked="Logout"></ToolbarItem>
+        <ToolbarItem Text="Delete Account" Order="Secondary" Clicked="DeleteAccount"></ToolbarItem>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
