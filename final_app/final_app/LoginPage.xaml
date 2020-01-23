@@ -9,7 +9,7 @@
         <StackLayout>
             <Entry x:Name="uname_line" VerticalOptions="Center" HorizontalOptions="Center" Placeholder="Username" WidthRequest="150"/>
             <Entry x:Name="pw_line" VerticalOptions="Center" HorizontalOptions="Center" IsPassword="True" Placeholder="Password" WidthRequest="150" Text=""/>
-            <Button x:Name="enter_btn" Text="Log In" VerticalOptions="End" HorizontalOptions="Center" Clicked="btn_clicked" BackgroundColor="CadetBlue"/>
+            <Button x:Name="enter_btn" Text="Log In" VerticalOptions="End" HorizontalOptions="Center" Clicked="btn_clicked" BackgroundColor="LightGray"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

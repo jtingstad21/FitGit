@@ -29,7 +29,7 @@
                     <Label x:Name="TotINTMINS" Text="" FontSize="Body" Padding="-5,0,0,0"></Label>
                 </StackLayout>
             </ContentView>
-            <Button Text="Clear Exercise History" HorizontalOptions="Center" VerticalOptions="End" BackgroundColor="Green" Clicked="ClearHistory"></Button>
+            <Button Text="Clear Exercise History" TextColor="Linen" HorizontalOptions="Center" VerticalOptions="End" BackgroundColor="MidnightBlue" Clicked="ClearHistory"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

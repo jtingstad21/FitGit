@@ -29,7 +29,6 @@ C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\bin\Debu
 C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\bin\Debug\netstandard2.0\ref\final_app.dll
 C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\bin\Debug\netstandard2.0\final_app.pdb
 C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.csprojAssemblyReference.cache
-C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.AssemblyInfoInputs.cache
 C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\obj\Debug\netstandard2.0\final_app.AssemblyInfo.cs
@@ -56,3 +55,6 @@ C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\obj\Debug\netstandard2.0\ExerciseHistoryDisplay.xaml.g.cs
+C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\obj\Debug\netstandard2.0\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\obj\Debug\netstandard2.0\ExerciseHistoryDisplay.xaml.g.cs
+C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\obj\Debug\netstandard2.0\SearchBrowsePage.xaml.g.cs

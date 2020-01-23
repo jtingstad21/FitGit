@@ -17,7 +17,6 @@ namespace final_app.Models
             Name = n;
             MET = M;
             Intensity = "Low";
-            ExerciseTime = 0.0;
         }
 
         public double ExerciseTime

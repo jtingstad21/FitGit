@@ -81,8 +81,9 @@ namespace final_app
                 IntMinLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
 
                 addEx.Text = "Add to exercise list";
+                addEx.TextColor = Color.Linen;
                 addEx.Clicked += AddCalories;
-                addEx.BackgroundColor = Color.Green;
+                addEx.BackgroundColor = Color.MidnightBlue;
                 addEx.VerticalOptions = LayoutOptions.End;
                 addEx.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
                 addEx.CommandParameter = CurrentUser.ex_list[i];
@@ -106,7 +107,7 @@ namespace final_app
                 
                 OverheadStacklayoutm.Children.Add(myContentView);
             }
-            ExerciseTime.Text = CurrentUser.ex_list[0].ExerciseTime.ToString("0.00");
+            //ExerciseTime.Text = CurrentUser.ex_list[0].ExerciseTime.ToString("0.00");
             fakeBTNClikEVnt(CurrentUser.ex_list[0].Intensity);
         }
 
@@ -189,7 +190,7 @@ namespace final_app
             double.TryParse(TotalCal.Text, out double numBurnt);
             Exercise exe = button.CommandParameter as Exercise;
             double.TryParse(ExerciseTime.Text, out double time);
-            numBurnt += exe.Calories((CurrentUser.ex_list.Find(x => x.Name == exe.Name)).ExerciseTime, CurrentUser.Weight);
+            numBurnt += exe.Calories(time, CurrentUser.Weight);
             TotalCal.Text = numBurnt.ToString("0.00");
             holder.Add(CurrentUser.ex_list.Find(x => x.Name == exe.Name));
             await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, holder, CurrentUser.ex_list);
@@ -239,18 +240,8 @@ namespace final_app
 
         public void SearchTextChanged(object sender, TextChangedEventArgs e)
         {
-            //bool display = true;
             OverheadStacklayoutm.Children.Clear();
-            //foreach (ContentView CV in OverheadStacklayoutm.Children)
-            //{
-            //    StackLayout slOne = CV.Content as StackLayout;
-            //    if(!(slOne.Children[0] as Label).Text.Contains(e.NewTextValue))
-            //    {
 
-            //        CV.IsVisible = false;
-            //    }
-            //}
-            //CurrentUser.ex_list[0].Name;
             foreach (Exercise ex in CurrentUser.ex_list)
             {
 
@@ -311,8 +302,9 @@ namespace final_app
                     IntMinLabel2.FontSize = Device.GetNamedSize(NamedSize.Body, typeof(Label));
 
                     addEx.Text = "Add to exercise list";
+                    addEx.TextColor = Color.Linen;
                     addEx.Clicked += AddCalories;
-                    addEx.BackgroundColor = Color.Green;
+                    addEx.BackgroundColor = Color.MidnightBlue;
                     addEx.VerticalOptions = LayoutOptions.End;
                     addEx.FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(Label));
                     addEx.CommandParameter = ex;
@@ -335,13 +327,8 @@ namespace final_app
                     myContentView.Content = StackLayoutTop;
 
                     OverheadStacklayoutm.Children.Add(myContentView);
-                    //display = false;
                 }
             }
-            //if (display)
-            //{
-            //    await DisplayAlert("No Results", "No results were found.", "Ok");
-            //}
         }
     }
 }

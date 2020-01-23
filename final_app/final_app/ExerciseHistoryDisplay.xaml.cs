@@ -44,7 +44,7 @@ namespace final_app
                 Label IntMinLabel1 = new Label();
                 Label IntMinLabel2 = new Label();
 
-                myContentView.BackgroundColor = Color.LightGray;
+                myContentView.BackgroundColor = Color.SteelBlue;
                 StackLayoutIntensity.Orientation = StackOrientation.Horizontal;
                 StackLayoutCals.Orientation = StackOrientation.Horizontal;
                 StackLayoutIntMins.Orientation = StackOrientation.Horizontal;

@@ -2,39 +2,39 @@
 <XamlProjectMeta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Files>
     <XamlFileMeta>
-      <FilePath>C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\App.xaml</FilePath>
+      <FilePath>C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\App.xaml</FilePath>
       <Hash>9E-C9-D3-E4-B3-C3-97-11-8F-77-4D-C0-FD-88-A2-7A</Hash>
       <Properties>
         <string>NavigationPage.HasNavigationBar</string>
       </Properties>
     </XamlFileMeta>
     <XamlFileMeta>
-      <FilePath>C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\ExerciseHistoryDisplay.xaml</FilePath>
-      <Hash>84-57-21-8E-C3-B7-41-0E-1C-30-5B-E7-1C-73-9E-9A</Hash>
+      <FilePath>C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\ExerciseHistoryDisplay.xaml</FilePath>
+      <Hash>60-9D-06-F3-0A-2C-20-08-66-E2-70-34-66-4A-31-4C</Hash>
       <Properties />
     </XamlFileMeta>
     <XamlFileMeta>
-      <FilePath>C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\LoginPage.xaml</FilePath>
-      <Hash>B8-BC-A6-9F-FB-6C-02-69-93-0F-37-83-6B-50-22-0B</Hash>
+      <FilePath>C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\LoginPage.xaml</FilePath>
+      <Hash>78-B0-F4-25-DB-1E-CE-4C-A3-46-A3-C7-CD-0E-8E-DA</Hash>
       <Properties />
     </XamlFileMeta>
     <XamlFileMeta>
-      <FilePath>C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\MainPage.xaml</FilePath>
+      <FilePath>C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\MainPage.xaml</FilePath>
       <Hash>0F-2C-B8-DD-FE-BA-95-25-E5-E7-99-48-45-DF-F6-4B</Hash>
       <Properties>
         <string>NavigationPage.HasNavigationBar</string>
       </Properties>
     </XamlFileMeta>
     <XamlFileMeta>
-      <FilePath>C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\SearchBrowsePage.xaml</FilePath>
-      <Hash>74-A0-5B-AB-20-D7-D8-0A-B3-3D-80-DA-D2-02-E7-CA</Hash>
+      <FilePath>C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\SearchBrowsePage.xaml</FilePath>
+      <Hash>A7-72-EA-4E-48-D6-CF-73-05-12-8D-B2-05-E4-49-87</Hash>
       <Properties>
         <string>NavigationPage.HasBackButton</string>
       </Properties>
     </XamlFileMeta>
     <XamlFileMeta>
-      <FilePath>C:\Users\Jonathan\Desktop\jfd\FitGit\final_app\final_app\SignUpPage.xaml</FilePath>
-      <Hash>F1-3B-9D-D9-43-65-65-37-D5-D9-E9-A2-D1-C7-F0-EE</Hash>
+      <FilePath>C:\Users\joeyt\Documents\WJ2020\CS-371\Final\FitGit\final_app\final_app\SignUpPage.xaml</FilePath>
+      <Hash>4E-0F-ED-27-B4-44-10-E3-D3-6B-3F-9A-8A-F9-3C-8E</Hash>
       <Properties />
     </XamlFileMeta>
   </Files>

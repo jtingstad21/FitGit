@@ -5775,24 +5775,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jonathan\\.nuget\\packages\\": {},
+    "C:\\Users\\joeyt\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jonathan\\Desktop\\jfd\\FitGit\\final_app\\final_app.Android\\final_app.Android.csproj",
+      "projectUniqueName": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app.Android\\final_app.Android.csproj",
       "projectName": "final_app.Android",
-      "projectPath": "C:\\Users\\Jonathan\\Desktop\\jfd\\FitGit\\final_app\\final_app.Android\\final_app.Android.csproj",
-      "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jonathan\\Desktop\\jfd\\FitGit\\final_app\\final_app.Android\\obj\\",
+      "projectPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app.Android\\final_app.Android.csproj",
+      "packagesPath": "C:\\Users\\joeyt\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jonathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joeyt\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5806,8 +5806,8 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\Jonathan\\Desktop\\jfd\\FitGit\\final_app\\final_app\\final_app.csproj": {
-              "projectPath": "C:\\Users\\Jonathan\\Desktop\\jfd\\FitGit\\final_app\\final_app\\final_app.csproj"
+            "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\final_app.csproj": {
+              "projectPath": "C:\\Users\\joeyt\\Documents\\WJ2020\\CS-371\\Final\\FitGit\\final_app\\final_app\\final_app.csproj"
             }
           }
         }
