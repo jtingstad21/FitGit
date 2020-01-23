@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace final_app
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SignUpPage : ContentPage
+    public partial class SignUpPage : ContentPage   // Defines signup page behavior
     {
         FirebaseHelper helper = new FirebaseHelper();
         string Username = "";
@@ -15,12 +15,12 @@ namespace final_app
         string DateOfBirth = "";
         double Weight = 0.0;
 
-        public SignUpPage()
+        public SignUpPage() // Constructor
         {
             InitializeComponent();
         }
 
-        private async void enter_clicked(object sender, EventArgs e)
+        private async void enter_clicked(object sender, EventArgs e)    // Defines functionality for button click
         {
             Username = uname_line.Text;
             Password = pw_again.Text;

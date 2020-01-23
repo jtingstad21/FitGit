@@ -6,16 +6,16 @@ using final_app_Firebase;
 namespace final_app
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class LoginPage : ContentPage    // Defines login page behavior
     {
         FirebaseHelper helper = new FirebaseHelper();
         string UserName = "";
         string Password = "";
-        public LoginPage()
+        public LoginPage()  // Constructor
         {
             InitializeComponent();
         }
-        public async void btn_clicked(object sender, EventArgs e)
+        public async void btn_clicked(object sender, EventArgs e)   // Defines behavior on button click
         {
             UserName = uname_line.Text;
             Password = pw_line.Text;

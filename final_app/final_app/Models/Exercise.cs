@@ -4,7 +4,7 @@ using System.Text;
 
 namespace final_app.Models
 {
-    public class Exercise
+    public class Exercise   // Exercises that the user can select from
     {
         public Exercise()
         {

@@ -11,10 +11,10 @@ using final_app.Models;
 
 namespace final_app_Firebase
 {
-    class FirebaseHelper
+    class FirebaseHelper    // Query methods for interaction with firebase realtime database
     {
         FirebaseClient myfirebase = new FirebaseClient("https://fitgit-e60fb.firebaseio.com/");
-        private async Task<List<User>> GetAllUsers()
+        private async Task<List<User>> GetAllUsers()    // Returns list of users
         {
             return (await myfirebase.Child("Users").OnceAsync<User>()).Select(item => new User
             {
@@ -28,7 +28,7 @@ namespace final_app_Firebase
         }
 
         
-        public async Task<bool> UserExists(string UserName)
+        public async Task<bool> UserExists(string UserName) // Check to see if user exists in current database
         {
             var allusers = await GetAllUsers();
             await myfirebase.Child("Users").OnceAsync<User>();
@@ -42,7 +42,7 @@ namespace final_app_Firebase
             }
         }
 
-        public async Task<User> getUser(string UserName)
+        public async Task<User> getUser(string UserName)    // Returns single user
         {
             return (await myfirebase.Child("Users").OnceAsync<User>()).Select(item => new User
             {
@@ -55,7 +55,7 @@ namespace final_app_Firebase
             }).Where(a => a.UserName == UserName).FirstOrDefault();
         }
 
-        public async Task<User> getUser(User user)
+        public async Task<User> getUser(User user)  // Returns single user based on a user parameter
         {
             return (await myfirebase.Child("Users").OnceAsync<User>()).Select(item => new User
             {
@@ -69,7 +69,7 @@ namespace final_app_Firebase
         }
 
 
-        public async Task<bool> isCorrectpWUn(string UserName, string Password)
+        public async Task<bool> isCorrectpWUn(string UserName, string Password) // determines if user entered correct password
         {
             var allusers = await GetAllUsers();
             await myfirebase.Child("Users").OnceAsync<User>();
@@ -83,7 +83,7 @@ namespace final_app_Firebase
             }
         }
 
-        public async Task AddUser(string password, string user_name, string dob, double weight)
+        public async Task AddUser(string password, string user_name, string dob, double weight) // Adds user's exercises
         {
             List<Exercise> ex_List = new List<Exercise>();
             ex_List.Add(new Exercise("Aerobics", 3.5));
@@ -166,6 +166,7 @@ namespace final_app_Firebase
             });            
         }
 
+        // Updates user info
         public async Task UpdateUser(string password, string user_name, string dob, double weight, List<Exercise> EX_hist, List<Exercise> ex_List)
         {
             var keyUser = (await myfirebase
@@ -179,19 +180,8 @@ namespace final_app_Firebase
                 .Child(keyUser.Key).PutAsync(new User { DOB = dob, Password = password, UserName = user_name, Weight = weight, ex_hist = EX_hist, ex_list = ex_List });
         }
 
-        public async Task UpdateUserNanHist(string password, string user_name, string dob, double weight, List<Exercise> ex_List)
-        {
-            var keyUser = (await myfirebase
-                        .Child("Users").OnceAsync<User>())
-                        .Where(a => a.Object.UserName == user_name && a.Object.Password == password )
-                        .FirstOrDefault();
-
-            await myfirebase
-                .Child("Users")
-                .Child(keyUser.Key).PutAsync(new User() { Password = password, UserName = user_name, DOB = dob, Weight = weight, ex_list = ex_List });
-        }
-
-        public async Task DeleteUser(string user_name, string password)
+        
+        public async Task DeleteUser(string user_name, string password) // Deletes user account from database
         {
             var keyUser = (await myfirebase
                             .Child("Users")

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace final_app.Droid
 {
     [Activity(Theme ="@style/Logo.Splash", MainLauncher = true, NoHistory = true)]
-    public class SplashScreen : AppCompatActivity
+    public class SplashScreen : AppCompatActivity   // First page that shows when the application is opening
     {
         static readonly string TAG = "X:" + typeof(SplashScreen).Name;
         public override void OnCreate(Bundle savedInstanceState, PersistableBundle persistableBundle)
@@ -18,16 +18,16 @@ namespace final_app.Droid
             Log.Debug(TAG, "SplashScreen created and running");
         }
 
-        protected override void OnResume()
+        protected override void OnResume()  // Shows logo on splash screen at open
         {
             base.OnResume();
             Task Splashscreen = new Task(() => { ShowLogo(); });
             Splashscreen.Start();
         }
 
-        public override void OnBackPressed() { }
+        public override void OnBackPressed() { }    // Does nothing
 
-        async void ShowLogo()
+        async void ShowLogo()   // Shows logo on splash screen
         {
             Log.Debug(TAG, "Startup Screen shown.");
             await Task.Delay(8000);

@@ -8,7 +8,7 @@ using final_app_Firebase;
 namespace final_app
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SearchBrowsePage : ContentPage
+    public partial class SearchBrowsePage : ContentPage // Contains exercise info and displays it
     {
         FirebaseHelper helper = new FirebaseHelper();
         User CurrentUser = new User();
@@ -19,7 +19,7 @@ namespace final_app
             InitializeComponent();
         }
 
-        public async void helperFunc(User user)
+        public async void helperFunc(User user) // Allows you to call thread inside constructor
         {
             CurrentUser = await helper.getUser(user);
             if (CurrentUser.ex_hist.Count > 0)
@@ -107,11 +107,10 @@ namespace final_app
                 
                 OverheadStacklayoutm.Children.Add(myContentView);
             }
-            //ExerciseTime.Text = CurrentUser.ex_list[0].ExerciseTime.ToString("0.00");
             fakeBTNClikEVnt(CurrentUser.ex_list[0].Intensity);
         }
 
-        private async void fakeBTNClikEVnt(string val)
+        private async void fakeBTNClikEVnt(string val)  // Necessary for auto population of data
         {
             CurrentUser = await helper.getUser(CurrentUser);
             foreach (ContentView CV in OverheadStacklayoutm.Children)
@@ -133,7 +132,7 @@ namespace final_app
             await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
         }
 
-        public async void MinutesChanged(object sender, TextChangedEventArgs e)
+        public async void MinutesChanged(object sender, TextChangedEventArgs e) // Gets number of minutes from user entry line
         {
             CurrentUser = await helper.getUser(CurrentUser);
             string newMin = e.NewTextValue;
@@ -155,7 +154,7 @@ namespace final_app
             await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
         }
 
-        public void setCalories()
+        public void setCalories()   // Changes the number of calories outputted on the screen under each exercise
         {
             int i = 0;
             foreach (ContentView CV in OverheadStacklayoutm.Children)
@@ -168,7 +167,7 @@ namespace final_app
             }
         }
 
-        public void setIntensityMinutes()
+        public void setIntensityMinutes()   // Changes intensity minutes based on user entry
         {
             int i = 0;
             foreach (ContentView CV in OverheadStacklayoutm.Children)
@@ -181,9 +180,7 @@ namespace final_app
             }
         }
 
-        
-
-        public async void AddCalories(object sender, EventArgs e)// keep between starts of app
+        public async void AddCalories(object sender, EventArgs e)   // Adds calories to bottom total calories bar
         {
 
             var button = sender as Button;
@@ -198,7 +195,7 @@ namespace final_app
             await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
         }
 
-        public async void setIntensityLvl(object sender, EventArgs e)
+        public async void setIntensityLvl(object sender, EventArgs e)   // Allows user to pick high, medium, or low intensity buttons
         {
             CurrentUser = await helper.getUser(CurrentUser);
             var button = sender as Button;
@@ -221,24 +218,24 @@ namespace final_app
             await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
         }
 
-        public async void ExerciseHistoryPage(object sender, EventArgs e)
+        public async void ExerciseHistoryPage(object sender, EventArgs e)   // Navigates to exercies history page
         {
             await Navigation.PushAsync(new ExerciseHistoryDisplay(CurrentUser));
         }
 
-        public async void DeleteAccount(object sender, EventArgs e)
+        public async void DeleteAccount(object sender, EventArgs e) // Deletes user account
         {
             await helper.DeleteUser(CurrentUser.UserName, CurrentUser.Password);
             await Navigation.PushAsync(new MainPage());
         }
 
-        public async void Logout(object sender, EventArgs e)
+        public async void Logout(object sender, EventArgs e)    // Logs out user
         {
             CurrentUser = new User();
             await Navigation.PushAsync(new MainPage());
         }
 
-        public void SearchTextChanged(object sender, TextChangedEventArgs e)
+        public void SearchTextChanged(object sender, TextChangedEventArgs e)    // Updates the search results to the screen based on user input
         {
             OverheadStacklayoutm.Children.Clear();
 

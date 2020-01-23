@@ -11,7 +11,7 @@ using final_app_Firebase;
 namespace final_app
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ExerciseHistoryDisplay : ContentPage
+    public partial class ExerciseHistoryDisplay : ContentPage   // Displays exercises in user's history list
     {
         FirebaseHelper helper = new FirebaseHelper();
         User CurrentUser = new User();
@@ -21,6 +21,7 @@ namespace final_app
             InitializeComponent();
         }
 
+        // For function comment, see SearchBrowsePage.xaml.cs
         public async void helperFunc(User user)
         {
             CurrentUser = await helper.getUser(user);
@@ -97,7 +98,7 @@ namespace final_app
                 OverheadStacklayout.Children.Add(myContentView);
             }
         }
-        private async void calcIntMins()
+        private async void calcIntMins()    // See SearchBrowsePage.xaml.cs
         {
             CurrentUser = await helper.getUser(CurrentUser);
             double val = 0.0;
@@ -108,7 +109,7 @@ namespace final_app
             TotINTMINS.Text = val.ToString("0.00");
         }
 
-        private void calcCalTotal()
+        private void calcCalTotal() // See SearchBrowsePage.xaml.cs
         {
             double val = 0.0;
             foreach (Exercise ex in CurrentUser.ex_hist)
@@ -118,7 +119,7 @@ namespace final_app
             TOtalCalVal.Text = val.ToString("0.00");
         }
 
-        public async void ClearHistory(object sender, EventArgs e)//need to clear the calories burned on the home screen
+        public async void ClearHistory(object sender, EventArgs e)  // Clears values in history on button click
         {
             CurrentUser.ex_hist.Clear();
             OverheadStacklayout.Children.Clear();
@@ -127,19 +128,19 @@ namespace final_app
             await helper.UpdateUser(CurrentUser.Password, CurrentUser.UserName, CurrentUser.DOB, CurrentUser.Weight, CurrentUser.ex_hist, CurrentUser.ex_list);
         }
 
-        public async void DeleteAccount(object sender, EventArgs e)
+        public async void DeleteAccount(object sender, EventArgs e) // Deletes user account
         {
             await helper.DeleteUser(CurrentUser.UserName, CurrentUser.Password);
             await Navigation.PushAsync(new MainPage());
         }
 
-        public async void Logout(object sender, EventArgs e)
+        public async void Logout(object sender, EventArgs e)    // Log out user
         {
             CurrentUser = new User();
             await Navigation.PushAsync(new MainPage());
         }
 
-        public async void Gohome(object sender, EventArgs e)
+        public async void Gohome(object sender, EventArgs e)    // Defines behavior of home button
         {
             await Navigation.PushAsync(new SearchBrowsePage(await helper.getUser(CurrentUser)));
         }

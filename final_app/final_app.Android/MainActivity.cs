@@ -10,7 +10,7 @@ using Android.Content;
 namespace final_app.Droid
 {
     [Activity(Label = "final_app", Icon = "@mipmap/icon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity   // Starts the application, written by visual studio
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
